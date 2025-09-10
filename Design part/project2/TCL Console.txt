@@ -1,0 +1,898 @@
+
+SPI Slave Initialized
+Reset Asserted
+
+-------------------------- Test Case 1 --------------------------
+
+Master Operation: Transmitting Write Address:  36
+Master TX Started. Control Bits: 000, Data: 00100100
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00000100100
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data: 129
+Master TX Started. Control Bits: 001, Data: 10000001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00110000001
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address:  36
+Master TX Started. Control Bits: 110, Data: 00100100
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11000100100
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 1
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 0
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 0
+Bit 6/8 Received -> MISO: 0
+Bit 7/8 Received -> MISO: 0
+Bit 8/8 Received -> MISO: 1
+Serial-to-Parallel Conversion Completed. Output Data: 10000001
+Slave Select Deasserted. Master RX Completed.
+Received Data: 129
+
+Data Match: Addr =  36, Expected = 129, Received = 129
+
+-------------------------- Test Case 2 --------------------------
+
+Master Operation: Transmitting Write Address:   9
+Master TX Started. Control Bits: 000, Data: 00001001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00000001001
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data:  99
+Master TX Started. Control Bits: 001, Data: 01100011
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00101100011
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address:   9
+Master TX Started. Control Bits: 110, Data: 00001001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11000001001
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 0
+Bit 2/8 Received -> MISO: 1
+Bit 3/8 Received -> MISO: 1
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 0
+Bit 6/8 Received -> MISO: 0
+Bit 7/8 Received -> MISO: 1
+Bit 8/8 Received -> MISO: 1
+Serial-to-Parallel Conversion Completed. Output Data: 01100011
+Slave Select Deasserted. Master RX Completed.
+Received Data:  99
+
+Data Match: Addr =   9, Expected =  99, Received =  99
+
+-------------------------- Test Case 3 --------------------------
+
+Master Operation: Transmitting Write Address:  13
+Master TX Started. Control Bits: 000, Data: 00001101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00000001101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data: 141
+Master TX Started. Control Bits: 001, Data: 10001101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00110001101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address:  13
+Master TX Started. Control Bits: 110, Data: 00001101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11000001101
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 1
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 0
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 1
+Bit 6/8 Received -> MISO: 1
+Bit 7/8 Received -> MISO: 0
+Bit 8/8 Received -> MISO: 1
+Serial-to-Parallel Conversion Completed. Output Data: 10001101
+Slave Select Deasserted. Master RX Completed.
+Received Data: 141
+
+Data Match: Addr =  13, Expected = 141, Received = 141
+
+-------------------------- Test Case 4 --------------------------
+
+Master Operation: Transmitting Write Address: 101
+Master TX Started. Control Bits: 000, Data: 01100101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00001100101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data:  18
+Master TX Started. Control Bits: 001, Data: 00010010
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00100010010
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address: 101
+Master TX Started. Control Bits: 110, Data: 01100101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11001100101
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 0
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 0
+Bit 4/8 Received -> MISO: 1
+Bit 5/8 Received -> MISO: 0
+Bit 6/8 Received -> MISO: 0
+Bit 7/8 Received -> MISO: 1
+Bit 8/8 Received -> MISO: 0
+Serial-to-Parallel Conversion Completed. Output Data: 00010010
+Slave Select Deasserted. Master RX Completed.
+Received Data:  18
+
+Data Match: Addr = 101, Expected =  18, Received =  18
+
+-------------------------- Test Case 5 --------------------------
+
+Master Operation: Transmitting Write Address:   1
+Master TX Started. Control Bits: 000, Data: 00000001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00000000001
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data:  13
+Master TX Started. Control Bits: 001, Data: 00001101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00100001101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address:   1
+Master TX Started. Control Bits: 110, Data: 00000001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11000000001
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 0
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 0
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 1
+Bit 6/8 Received -> MISO: 1
+Bit 7/8 Received -> MISO: 0
+Bit 8/8 Received -> MISO: 1
+Serial-to-Parallel Conversion Completed. Output Data: 00001101
+Slave Select Deasserted. Master RX Completed.
+Received Data:  13
+
+Data Match: Addr =   1, Expected =  13, Received =  13
+
+-------------------------- Test Case 6 --------------------------
+
+Master Operation: Transmitting Write Address: 118
+Master TX Started. Control Bits: 000, Data: 01110110
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00001110110
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data:  61
+Master TX Started. Control Bits: 001, Data: 00111101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00100111101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address: 118
+Master TX Started. Control Bits: 110, Data: 01110110
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11001110110
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 0
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 1
+Bit 4/8 Received -> MISO: 1
+Bit 5/8 Received -> MISO: 1
+Bit 6/8 Received -> MISO: 1
+Bit 7/8 Received -> MISO: 0
+Bit 8/8 Received -> MISO: 1
+Serial-to-Parallel Conversion Completed. Output Data: 00111101
+Slave Select Deasserted. Master RX Completed.
+Received Data:  61
+
+Data Match: Addr = 118, Expected =  61, Received =  61
+
+-------------------------- Test Case 7 --------------------------
+
+Master Operation: Transmitting Write Address: 237
+Master TX Started. Control Bits: 000, Data: 11101101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00011101101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data: 140
+Master TX Started. Control Bits: 001, Data: 10001100
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00110001100
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address: 237
+Master TX Started. Control Bits: 110, Data: 11101101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11011101101
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 1
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 0
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 1
+Bit 6/8 Received -> MISO: 1
+Bit 7/8 Received -> MISO: 0
+Bit 8/8 Received -> MISO: 0
+Serial-to-Parallel Conversion Completed. Output Data: 10001100
+Slave Select Deasserted. Master RX Completed.
+Received Data: 140
+
+Data Match: Addr = 237, Expected = 140, Received = 140
+
+-------------------------- Test Case 8 --------------------------
+
+Master Operation: Transmitting Write Address: 249
+Master TX Started. Control Bits: 000, Data: 11111001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00011111001
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data: 198
+Master TX Started. Control Bits: 001, Data: 11000110
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00111000110
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address: 249
+Master TX Started. Control Bits: 110, Data: 11111001
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11011111001
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 1
+Bit 2/8 Received -> MISO: 1
+Bit 3/8 Received -> MISO: 0
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 0
+Bit 6/8 Received -> MISO: 1
+Bit 7/8 Received -> MISO: 1
+Bit 8/8 Received -> MISO: 0
+Serial-to-Parallel Conversion Completed. Output Data: 11000110
+Slave Select Deasserted. Master RX Completed.
+Received Data: 198
+
+Data Match: Addr = 249, Expected = 198, Received = 198
+
+-------------------------- Test Case 9 --------------------------
+
+Master Operation: Transmitting Write Address: 197
+Master TX Started. Control Bits: 000, Data: 11000101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00011000101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data: 170
+Master TX Started. Control Bits: 001, Data: 10101010
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00110101010
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 0
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 1
+Bit 9/11 -> MOSI: 0
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 0
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address: 197
+Master TX Started. Control Bits: 110, Data: 11000101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11011000101
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 0
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 1
+Bit 2/8 Received -> MISO: 0
+Bit 3/8 Received -> MISO: 1
+Bit 4/8 Received -> MISO: 0
+Bit 5/8 Received -> MISO: 1
+Bit 6/8 Received -> MISO: 0
+Bit 7/8 Received -> MISO: 1
+Bit 8/8 Received -> MISO: 0
+Serial-to-Parallel Conversion Completed. Output Data: 10101010
+Slave Select Deasserted. Master RX Completed.
+Received Data: 170
+
+Data Match: Addr = 197, Expected = 170, Received = 170
+
+-------------------------- Test Case 10 --------------------------
+
+Master Operation: Transmitting Write Address: 229
+Master TX Started. Control Bits: 000, Data: 11100101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00011100101
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Write Data: 119
+Master TX Started. Control Bits: 001, Data: 01110111
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 00101110111
+Bit 1/11 -> MOSI: 0
+Bit 2/11 -> MOSI: 0
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: 0
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 1
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 1
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Transmitting Read Address: 229
+Master TX Started. Control Bits: 110, Data: 11100101
+Slave Select Asserted.
+Starting Parallel-to-Serial Conversion. Input Data: 11011100101
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 0
+Bit 4/11 -> MOSI: 1
+Bit 5/11 -> MOSI: 1
+Bit 6/11 -> MOSI: 1
+Bit 7/11 -> MOSI: 0
+Bit 8/11 -> MOSI: 0
+Bit 9/11 -> MOSI: 1
+Bit 10/11 -> MOSI: 0
+Bit 11/11 -> MOSI: 1
+Parallel-to-Serial Conversion Completed.
+Slave Select Deasserted. Master TX Completed.
+
+Master Operation: Receiving Read DATA
+Master RX Started.
+Slave Select Asserted.
+Initiating Read Data Request. Control Bits: 111, Data: xxxxxxxx
+Starting Parallel-to-Serial Conversion. Input Data: 111xxxxxxxx
+Bit 1/11 -> MOSI: 1
+Bit 2/11 -> MOSI: 1
+Bit 3/11 -> MOSI: 1
+Bit 4/11 -> MOSI: x
+Bit 5/11 -> MOSI: x
+Bit 6/11 -> MOSI: x
+Bit 7/11 -> MOSI: x
+Bit 8/11 -> MOSI: x
+Bit 9/11 -> MOSI: x
+Bit 10/11 -> MOSI: x
+Bit 11/11 -> MOSI: x
+Parallel-to-Serial Conversion Completed.
+Receiving Data...
+Starting Serial-to-Parallel Conversion...
+Bit 1/8 Received -> MISO: 0
+Bit 2/8 Received -> MISO: 1
+Bit 3/8 Received -> MISO: 1
+Bit 4/8 Received -> MISO: 1
+Bit 5/8 Received -> MISO: 0
+Bit 6/8 Received -> MISO: 1
+Bit 7/8 Received -> MISO: 1
+Bit 8/8 Received -> MISO: 1
+Serial-to-Parallel Conversion Completed. Output Data: 01110111
+Slave Select Deasserted. Master RX Completed.
+Received Data: 119
+
+Data Match: Addr = 229, Expected = 119, Received = 119
+
+-----------------------------------------------------------------------
+
+Simulation Completed: 10 test cases excuted.
+Test Summary: Passed: 10, Failed: 0
