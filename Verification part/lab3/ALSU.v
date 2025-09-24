@@ -98,7 +98,7 @@ always @(posedge clk or posedge rst) begin
             if (FULL_ADDER == "ON")
               out <= A_reg + B_reg + cin_reg;
             else
-	      out <= A_reg + B_reg;
+	            out <= A_reg + B_reg;
           end        
           3'h3: out <= A_reg * B_reg;
           3'h4: begin

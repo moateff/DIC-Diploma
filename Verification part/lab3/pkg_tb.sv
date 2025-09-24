@@ -1,6 +1,6 @@
-import my_pkg::*;
+import pkg::*;
 
-module tb;
+module pkg_tb;
     
     screen img1;
 

@@ -1,11 +1,11 @@
-package testing_pkg;
+package alu_pkg;
+
     typedef enum {ADD, SUB, MULT, DIV} opcode_e;
+    parameter MAXPOS = 127;
+    parameter ZERO = 0;
+    parameter MAXNEG = -128;
 
     class Transaction;
-        parameter MAXPOS = 127;
-        parameter ZERO = 0;
-        parameter MAXNEG = -128;
-
         rand opcode_e opcode;
         rand byte operand1;
         rand byte operand2;
@@ -17,6 +17,7 @@ package testing_pkg;
                 bins opcode_add_to_sub = (ADD => SUB);
                 illegal_bins opcode_not_DIV = {DIV};
             }
+
             operand1_cp: coverpoint operand1 {
                 bins operand1_maxpos = {MAXPOS};
                 bins operand1_zero = {ZERO};
@@ -25,8 +26,8 @@ package testing_pkg;
             }
         endgroup
 
-        function new;
-            g1 = new;
+        function new();
+            g1 = new();
         endfunction
     endclass
 

@@ -8,7 +8,7 @@ output reg [15:0] leds;
 output reg signed [5:0] out;
 
 reg red_op_A_reg, red_op_B_reg, bypass_A_reg, bypass_B_reg, direction_reg, serial_in_reg;
-reg cin_reg;
+reg signed [1:0] cin_reg;
 reg [2:0] opcode_reg;
 reg signed [2:0] A_reg, B_reg;
 
@@ -73,7 +73,7 @@ always @(posedge clk or posedge rst) begin
     else if (invalid) 
         out <= 0;
     else begin
-        case (opcode_reg)
+        case (opcode)
           3'h0: begin 
             if (red_op_A_reg && red_op_B_reg)
               out <= (INPUT_PRIORITY == "A")? |A_reg: |B_reg;
@@ -94,12 +94,7 @@ always @(posedge clk or posedge rst) begin
             else 
               out <= A_reg ^ B_reg;
           end
-          3'h2: begin                  
-            if (FULL_ADDER == "ON")
-              out <= A_reg + B_reg + cin_reg;
-            else
-	      out <= A_reg + B_reg;
-          end        
+          3'h2: out <= A_reg + B_reg;
           3'h3: out <= A_reg * B_reg;
           3'h4: begin
             if (direction_reg)

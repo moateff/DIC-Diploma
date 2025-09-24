@@ -1,4 +1,4 @@
-package my_pkg;
+package pkg;
     
     parameter HEIGHT = 10;
     parameter WIDTH = 10;

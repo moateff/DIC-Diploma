@@ -1,620 +1,681 @@
 Coverage Report by instance with details
 
 =================================================================================
-=== Instance: /counter_tb/DUT
-=== Design Unit: work.counter
+=== Instance: /alsu_tb/DUT
+=== Design Unit: work.ALSU
 =================================================================================
 Branch Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Branches                        10        10         0   100.00%
+    Branches                        32        32         0   100.00%
 
 ================================Branch Details================================
 
-Branch Coverage for instance /counter_tb/DUT
+Branch Coverage for instance /alsu_tb/DUT
 
     Line         Item                      Count     Source 
     ----         ----                      -----     ------ 
-  File counter.v
+  File ALSU.v
 ------------------------------------IF Branch------------------------------------
-    21                                        68     Count coming in to IF
-    21              1                         10         if (!rst_n)
-    23              1                         11         else if (!load_n)
-    25              1                         11         else if (ce)
-                                              36     All False Count
+    24                                      1056     Count coming in to IF
+    24              1                        109       if(rst) begin
+    35              1                        947       end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                      1056     Count coming in to IF
+    51              1                        109       if(rst) begin
+    53              1                        947       end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                       947     Count coming in to IF
+    54              1                        495           if (invalid)
+    56              1                        452           else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                      1055     Count coming in to IF
+    63              1                        108       if(rst) begin
+    66              1                        947       else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    67                                       947     Count coming in to IF
+    67              1                          1         if (bypass_A_reg && bypass_B_reg)
+    69              1                         51         else if (bypass_A_reg)
+    71              1                         49         else if (bypass_B_reg)
+    73              1                        441         else if (invalid) 
+    75              1                        405         else begin
+Branch totals: 5 hits of 5 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    76                                       405     Count coming in to CASE
+    77              1                         59               3'h0: begin 
+    87              1                         70               3'h1: begin
+    97              1                         52               3'h2: out <= A_reg + B_reg;
+    98              1                         74               3'h3: out <= A_reg * B_reg;
+    99              1                         52               3'h4: begin
+    105             1                         63               3'h5: begin
+                                              35     All False Count
+Branch totals: 7 hits of 7 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    78                                        59     Count coming in to IF
+    78              1                          9                 if (red_op_A_reg && red_op_B_reg)
+    80              1                         10                 else if (red_op_A_reg) 
+    82              1                          6                 else if (red_op_B_reg)
+    84              1                         34                 else 
 Branch totals: 4 hits of 4 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    26                                        11     Count coming in to IF
-    26              1                          5             if (up_down)
-    28              1                          6             else 
+    88                                        70     Count coming in to IF
+    88              1                          9                 if (red_op_A_reg && red_op_B_reg)
+    90              1                         16                 else if (red_op_A_reg) 
+    92              1                         10                 else if (red_op_B_reg)
+    94              1                         35                 else 
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    100                                       52     Count coming in to IF
+    100             1                         21                 if (direction_reg)
+    102             1                         31                 else
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------IF Branch------------------------------------
-    32                                        19     Count coming in to IF
-    32              1                          5     assign max_count = (count_out == {WIDTH{1'b1}})? 1:0;
-    32              2                         14     assign max_count = (count_out == {WIDTH{1'b1}})? 1:0;
-Branch totals: 2 hits of 2 branches = 100.00%
-
-------------------------------------IF Branch------------------------------------
-    33                                        19     Count coming in to IF
-    33              1                          5     assign zero = (count_out == 0)? 1:0;
-    33              2                         14     assign zero = (count_out == 0)? 1:0;
+    106                                       63     Count coming in to IF
+    106             1                         34                 if (direction_reg)
+    108             1                         29                 else
 Branch totals: 2 hits of 2 branches = 100.00%
 
 
 Condition Coverage:
     Enabled Coverage              Bins   Covered    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Conditions                       2         2         0   100.00%
+    Conditions                       6         6         0   100.00%
 
 ================================Condition Details================================
 
-Condition Coverage for instance /counter_tb/DUT --
+Condition Coverage for instance /alsu_tb/DUT --
 
-  File counter.v
+  File ALSU.v
 ----------------Focused Condition View-------------------
-Line       32 Item    1  (count_out == {4{{1}}})
-Condition totals: 1 of 1 input term covered = 100.00%
-
-               Input Term   Covered  Reason for no coverage   Hint
-              -----------  --------  -----------------------  --------------
-  (count_out == {4{{1}}})         Y
-
-     Rows:       Hits  FEC Target                 Non-masking condition(s)      
- ---------  ---------  --------------------       -------------------------     
-  Row   1:          1  (count_out == {4{{1}}})_0  -                             
-  Row   2:          1  (count_out == {4{{1}}})_1  -                             
-
-----------------Focused Condition View-------------------
-Line       33 Item    1  (count_out == 0)
-Condition totals: 1 of 1 input term covered = 100.00%
-
-        Input Term   Covered  Reason for no coverage   Hint
-       -----------  --------  -----------------------  --------------
-  (count_out == 0)         Y
-
-     Rows:       Hits  FEC Target            Non-masking condition(s)      
- ---------  ---------  --------------------  -------------------------     
-  Row   1:          1  (count_out == 0)_0    -                             
-  Row   2:          1  (count_out == 0)_1    -                             
-
-
-Statement Coverage:
-    Enabled Coverage              Bins      Hits    Misses  Coverage
-    ----------------              ----      ----    ------  --------
-    Statements                       7         7         0   100.00%
-
-================================Statement Details================================
-
-Statement Coverage for instance /counter_tb/DUT --
-
-    Line         Item                      Count     Source 
-    ----         ----                      -----     ------ 
-  File counter.v
-    8                                                module counter (clk ,rst_n, load_n, up_down, ce, data_load, count_out, max_count, zero);
-    9                                                parameter WIDTH = 4;
-    10                                               input clk;
-    11                                               input rst_n;
-    12                                               input load_n;
-    13                                               input up_down;
-    14                                               input ce;
-    15                                               input [WIDTH-1:0] data_load;
-    16                                               output reg [WIDTH-1:0] count_out;
-    17                                               output max_count;
-    18                                               output zero;
-    19                                               
-    20              1                         68     always @(posedge clk) begin
-    21                                                   if (!rst_n)
-    22              1                         10             count_out <= 0;
-    23                                                   else if (!load_n)
-    24              1                         11             count_out <= data_load;
-    25                                                   else if (ce)
-    26                                                       if (up_down)
-    27              1                          5                 count_out <= count_out + 1;
-    28                                                       else 
-    29              1                          6                 count_out <= count_out - 1;
-    30                                               end
-    31                                               
-    32              1                         20     assign max_count = (count_out == {WIDTH{1'b1}})? 1:0;
-    33              1                         20     assign zero = (count_out == 0)? 1:0;
-
-Toggle Coverage:
-    Enabled Coverage              Bins      Hits    Misses  Coverage
-    ----------------              ----      ----    ------  --------
-    Toggles                         30        29         1    96.66%
-
-================================Toggle Details================================
-
-Toggle Coverage for instance /counter_tb/DUT --
-
-                                              Node      1H->0L      0L->1H  "Coverage"
-                                              ---------------------------------------
-                                                ce           1           1      100.00 
-                                               clk           1           1      100.00 
-                                    count_out[3-0]           1           1      100.00 
-                                    data_load[0-3]           1           1      100.00 
-                                            load_n           1           1      100.00 
-                                         max_count           1           1      100.00 
-                                             rst_n           0           1       50.00 
-                                           up_down           1           1      100.00 
-                                              zero           1           1      100.00 
-
-Total Node Count     =         15 
-Toggled Node Count   =         14 
-Untoggled Node Count =          1 
-
-Toggle Coverage      =      96.66% (29 of 30 bins)
-
-=================================================================================
-=== Instance: /counter_tb
-=== Design Unit: work.counter_tb
-=================================================================================
-
-Assertion Coverage:
-    Assertions                       6         6         0   100.00%
---------------------------------------------------------------------
-Name                 File(Line)                   Failure      Pass 
-                                                  Count        Count
---------------------------------------------------------------------
-/counter_tb/#ublk#95084642#115/immed__116
-                     counter_tb.sv(116)                 0          1
-/counter_tb/#ublk#95084642#128/immed__129
-                     counter_tb.sv(129)                 0          1
-/counter_tb/#ublk#95084642#141/immed__142
-                     counter_tb.sv(142)                 0          1
-/counter_tb/#ublk#95084642#152/immed__153
-                     counter_tb.sv(153)                 0          1
-/counter_tb/#ublk#95084642#168/immed__169
-                     counter_tb.sv(169)                 0          1
-/counter_tb/#ublk#95084642#179/immed__180
-                     counter_tb.sv(180)                 0          1
-Branch Coverage:
-    Enabled Coverage              Bins      Hits    Misses  Coverage
-    ----------------              ----      ----    ------  --------
-    Branches                        24        18         6    75.00%
-
-================================Branch Details================================
-
-Branch Coverage for instance /counter_tb
-NOTE: The modification timestamp for source file 'counter_tb.sv' has been altered since compilation.
-
-    Line         Item                      Count     Source 
-    ----         ----                      -----     ------ 
-  File counter_tb.sv
-------------------------------------IF Branch------------------------------------
-    57                                       101     Count coming in to IF
-    57              1                         11             if (!rst_n) begin
-    59              1                         14             end else if (!load_n) begin
-    61              1                         11             end else if (ce) begin
-                                              65     All False Count
-Branch totals: 4 hits of 4 branches = 100.00%
-
-------------------------------------IF Branch------------------------------------
-    62                                        11     Count coming in to IF
-    62              1                          5                 if (up_down) begin
-    64              1                          6                 end else begin
-Branch totals: 2 hits of 2 branches = 100.00%
-
-------------------------------------IF Branch------------------------------------
-    75                                        92     Count coming in to IF
-    75              1                    ***0***             if (count_out !== golden_count_out) begin
-                                              92     All False Count
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    80                                        92     Count coming in to IF
-    80              1                    ***0***             if (max_count !== golden_max_count) begin
-                                              92     All False Count
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    85                                        92     Count coming in to IF
-    85              1                    ***0***             if (zero !== golden_zero) begin
-                                              92     All False Count
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    90                                        92     Count coming in to IF
-    90              1                         92             if (local_error_count == 0) begin
-    93              1                    ***0***             end else begin
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    120                                       10     Count coming in to IF
-    120             1                          8                 if (~load_n) begin
-                                               2     All False Count
-Branch totals: 2 hits of 2 branches = 100.00%
-
-------------------------------------IF Branch------------------------------------
-    133                                       10     Count coming in to IF
-    133             1                          8                 if (ce) begin
-                                               2     All False Count
-Branch totals: 2 hits of 2 branches = 100.00%
-
-------------------------------------IF Branch------------------------------------
-    157                                       50     Count coming in to IF
-    157             1                    ***0***                 if (max_count) begin
-                                              50     All False Count
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    160                                       50     Count coming in to IF
-    160             1                         50                 if (zero) begin
-                                         ***0***     All False Count
-Branch totals: 1 hit of 2 branches = 50.00%
-
-------------------------------------IF Branch------------------------------------
-    184                                       10     Count coming in to IF
-    184             1                          5                 if (~load_n & ce) begin
-                                               5     All False Count
-Branch totals: 2 hits of 2 branches = 100.00%
-
-
-Condition Coverage:
-    Enabled Coverage              Bins   Covered    Misses  Coverage
-    ----------------              ----      ----    ------  --------
-    Conditions                       6         2         4    33.33%
-
-================================Condition Details================================
-
-Condition Coverage for instance /counter_tb --
-NOTE: The modification timestamp for source file 'counter_tb.sv' has been altered since compilation.
-
-  File counter_tb.sv
-----------------Focused Condition View-------------------
-Line       75 Item    1  (count_out !== golden_count_out)
-Condition totals: 0 of 1 input term covered = 0.00%
-
-                        Input Term   Covered  Reason for no coverage   Hint
-                       -----------  --------  -----------------------  --------------
-  (count_out !== golden_count_out)         N  '_1' not hit             Hit '_1'
-
-     Rows:       Hits  FEC Target                          Non-masking condition(s)      
- ---------  ---------  --------------------                -------------------------     
-  Row   1:          1  (count_out !== golden_count_out)_0  -                             
-  Row   2:    ***0***  (count_out !== golden_count_out)_1  -                             
-
-----------------Focused Condition View-------------------
-Line       80 Item    1  (max_count !== golden_max_count)
-Condition totals: 0 of 1 input term covered = 0.00%
-
-                        Input Term   Covered  Reason for no coverage   Hint
-                       -----------  --------  -----------------------  --------------
-  (max_count !== golden_max_count)         N  '_1' not hit             Hit '_1'
-
-     Rows:       Hits  FEC Target                          Non-masking condition(s)      
- ---------  ---------  --------------------                -------------------------     
-  Row   1:          1  (max_count !== golden_max_count)_0  -                             
-  Row   2:    ***0***  (max_count !== golden_max_count)_1  -                             
-
-----------------Focused Condition View-------------------
-Line       85 Item    1  (zero !== golden_zero)
-Condition totals: 0 of 1 input term covered = 0.00%
-
-              Input Term   Covered  Reason for no coverage   Hint
-             -----------  --------  -----------------------  --------------
-  (zero !== golden_zero)         N  '_1' not hit             Hit '_1'
-
-     Rows:       Hits  FEC Target                Non-masking condition(s)      
- ---------  ---------  --------------------      -------------------------     
-  Row   1:          1  (zero !== golden_zero)_0  -                             
-  Row   2:    ***0***  (zero !== golden_zero)_1  -                             
-
-----------------Focused Condition View-------------------
-Line       90 Item    1  (local_error_count == 0)
-Condition totals: 0 of 1 input term covered = 0.00%
-
-                Input Term   Covered  Reason for no coverage   Hint
-               -----------  --------  -----------------------  --------------
-  (local_error_count == 0)         N  '_0' not hit             Hit '_0'
-
-     Rows:       Hits  FEC Target                  Non-masking condition(s)      
- ---------  ---------  --------------------        -------------------------     
-  Row   1:    ***0***  (local_error_count == 0)_0  -                             
-  Row   2:          1  (local_error_count == 0)_1  -                             
-
-----------------Focused Condition View-------------------
-Line       184 Item    1  (~load_n & ce)
+Line       67 Item    1  (bypass_A_reg && bypass_B_reg)
 Condition totals: 2 of 2 input terms covered = 100.00%
 
-  Input Term   Covered  Reason for no coverage   Hint
- -----------  --------  -----------------------  --------------
-      load_n         Y
-          ce         Y
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  bypass_A_reg         Y
+  bypass_B_reg         Y
 
      Rows:       Hits  FEC Target            Non-masking condition(s)      
  ---------  ---------  --------------------  -------------------------     
-  Row   1:          1  load_n_0              ce                            
-  Row   2:          1  load_n_1              ce                            
-  Row   3:          1  ce_0                  ~load_n                       
-  Row   4:          1  ce_1                  ~load_n                       
+  Row   1:          1  bypass_A_reg_0        -                             
+  Row   2:          1  bypass_A_reg_1        bypass_B_reg                  
+  Row   3:          1  bypass_B_reg_0        bypass_A_reg                  
+  Row   4:          1  bypass_B_reg_1        bypass_A_reg                  
+
+----------------Focused Condition View-------------------
+Line       78 Item    1  (red_op_A_reg && red_op_B_reg)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  red_op_A_reg         Y
+  red_op_B_reg         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  red_op_A_reg_0        -                             
+  Row   2:          1  red_op_A_reg_1        red_op_B_reg                  
+  Row   3:          1  red_op_B_reg_0        red_op_A_reg                  
+  Row   4:          1  red_op_B_reg_1        red_op_A_reg                  
+
+----------------Focused Condition View-------------------
+Line       88 Item    1  (red_op_A_reg && red_op_B_reg)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  red_op_A_reg         Y
+  red_op_B_reg         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  red_op_A_reg_0        -                             
+  Row   2:          1  red_op_A_reg_1        red_op_B_reg                  
+  Row   3:          1  red_op_B_reg_0        red_op_A_reg                  
+  Row   4:          1  red_op_B_reg_1        red_op_A_reg                  
 
 
 Expression Coverage:
     Enabled Coverage              Bins   Covered    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Expressions                      2         2         0   100.00%
+    Expressions                      8         8         0   100.00%
 
 ================================Expression Details================================
 
-Expression Coverage for instance /counter_tb --
-NOTE: The modification timestamp for source file 'counter_tb.sv' has been altered since compilation.
+Expression Coverage for instance /alsu_tb/DUT --
 
-  File counter_tb.sv
+  File ALSU.v
 ----------------Focused Expression View-----------------
-Line       68 Item    1  (golden_count_out == {4{1}})
-Expression totals: 1 of 1 input term covered = 100.00%
+Line       18 Item    1  ((red_op_A_reg | red_op_B_reg) & (opcode_reg[1] | opcode_reg[2]))
+Expression totals: 4 of 4 input terms covered = 100.00%
 
-                    Input Term   Covered  Reason for no coverage   Hint
-                   -----------  --------  -----------------------  --------------
-  (golden_count_out == {4{1}})         Y
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+   red_op_A_reg         Y
+   red_op_B_reg         Y
+  opcode_reg[1]         Y
+  opcode_reg[2]         Y
 
-     Rows:       Hits  FEC Target                      Non-masking condition(s)      
- ---------  ---------  --------------------            -------------------------     
-  Row   1:          1  (golden_count_out == {4{1}})_0  -                             
-  Row   2:          1  (golden_count_out == {4{1}})_1  -                             
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  red_op_A_reg_0        ((opcode_reg[1] | opcode_reg[2]) && ~red_op_B_reg)
+  Row   2:          1  red_op_A_reg_1        ((opcode_reg[1] | opcode_reg[2]) && ~red_op_B_reg)
+  Row   3:          1  red_op_B_reg_0        ((opcode_reg[1] | opcode_reg[2]) && ~red_op_A_reg)
+  Row   4:          1  red_op_B_reg_1        ((opcode_reg[1] | opcode_reg[2]) && ~red_op_A_reg)
+  Row   5:          1  opcode_reg[1]_0       ((red_op_A_reg | red_op_B_reg) && ~opcode_reg[2])
+  Row   6:          1  opcode_reg[1]_1       ((red_op_A_reg | red_op_B_reg) && ~opcode_reg[2])
+  Row   7:          1  opcode_reg[2]_0       ((red_op_A_reg | red_op_B_reg) && ~opcode_reg[1])
+  Row   8:          1  opcode_reg[2]_1       ((red_op_A_reg | red_op_B_reg) && ~opcode_reg[1])
 
 ----------------Focused Expression View-----------------
-Line       69 Item    1  (golden_count_out == 0)
-Expression totals: 1 of 1 input term covered = 100.00%
+Line       19 Item    1  (opcode_reg[1] & opcode_reg[2])
+Expression totals: 2 of 2 input terms covered = 100.00%
 
-               Input Term   Covered  Reason for no coverage   Hint
-              -----------  --------  -----------------------  --------------
-  (golden_count_out == 0)         Y
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  opcode_reg[1]         Y
+  opcode_reg[2]         Y
 
-     Rows:       Hits  FEC Target                 Non-masking condition(s)      
- ---------  ---------  --------------------       -------------------------     
-  Row   1:          1  (golden_count_out == 0)_0  -                             
-  Row   2:          1  (golden_count_out == 0)_1  -                             
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  opcode_reg[1]_0       opcode_reg[2]                 
+  Row   2:          1  opcode_reg[1]_1       opcode_reg[2]                 
+  Row   3:          1  opcode_reg[2]_0       opcode_reg[1]                 
+  Row   4:          1  opcode_reg[2]_1       opcode_reg[1]                 
+
+----------------Focused Expression View-----------------
+Line       20 Item    1  (invalid_red_op | invalid_opcode)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+      Input Term   Covered  Reason for no coverage   Hint
+     -----------  --------  -----------------------  --------------
+  invalid_red_op         Y
+  invalid_opcode         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  invalid_red_op_0      ~invalid_opcode               
+  Row   2:          1  invalid_red_op_1      ~invalid_opcode               
+  Row   3:          1  invalid_opcode_0      ~invalid_red_op               
+  Row   4:          1  invalid_opcode_1      ~invalid_red_op               
 
 
 Statement Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Statements                      82        73         9    89.02%
+    Statements                      48        48         0   100.00%
 
 ================================Statement Details================================
 
-Statement Coverage for instance /counter_tb --
-NOTE: The modification timestamp for source file 'counter_tb.sv' has been altered since compilation.
+Statement Coverage for instance /alsu_tb/DUT --
 
     Line         Item                      Count     Source 
     ----         ----                      -----     ------ 
-  File counter_tb.sv
-    5                                                module counter_tb;
-    6                                                    // TESTBENCH VARIABLES
-    7                                                    int local_error_count = 0;
-    8                                                    int error_count = 0;
-    9                                                    int pass_count  = 0;
-    10                                               
-    11                                                   // DUT
-    12                                                   logic clk;
-    13                                                   logic rst_n; 
-    14                                                   logic load_n; 
-    15                                                   logic up_down; 
-    16                                                   logic ce;
-    17                                                   logic [WIDTH - 1:0] data_load;
-    18                                                   logic [WIDTH - 1:0] count_out;
-    19                                                   logic max_count;
-    20                                                   logic zero;
+  File ALSU.v
+    1                                                module ALSU(A, B, cin, serial_in, red_op_A, red_op_B, opcode, bypass_A, bypass_B, clk, rst, direction, leds, out);
+    2                                                parameter INPUT_PRIORITY = "A";
+    3                                                parameter FULL_ADDER = "ON";
+    4                                                input clk, cin, rst, red_op_A, red_op_B, bypass_A, bypass_B, direction, serial_in;
+    5                                                input [2:0] opcode;
+    6                                                input signed [2:0] A, B;
+    7                                                output reg [15:0] leds;
+    8                                                output reg signed [5:0] out;
+    9                                                
+    10                                               reg red_op_A_reg, red_op_B_reg, bypass_A_reg, bypass_B_reg, direction_reg, serial_in_reg;
+    11                                               reg signed [1:0] cin_reg;
+    12                                               reg [2:0] opcode_reg;
+    13                                               reg signed [2:0] A_reg, B_reg;
+    14                                               
+    15                                               wire invalid_red_op, invalid_opcode, invalid;
+    16                                               
+    17                                               //Invalid handling
+    18              1                        957     assign invalid_red_op = (red_op_A_reg | red_op_B_reg) & (opcode_reg[1] | opcode_reg[2]);
+    19              1                        837     assign invalid_opcode = opcode_reg[1] & opcode_reg[2];
+    20              1                        557     assign invalid = invalid_red_op | invalid_opcode;
     21                                               
-    22                                                   // GOLDEN MODEL 
-    23                                                   logic [WIDTH - 1:0] golden_count_out;
-    24                                                   logic golden_max_count;
-    25                                                   logic golden_zero;
-    26                                               
-    27                                                   counter #(.WIDTH(WIDTH)) DUT (
-    28                                                       .clk(clk),
-    29                                                       .rst_n(rst_n),
-    30                                                       .load_n(load_n),
-    31                                                       .up_down(up_down),
-    32                                                       .ce(ce),
-    33                                                       .data_load(data_load),
-    34                                                       .count_out(count_out),
-    35                                                       .max_count(max_count),
-    36                                                       .zero(zero)
-    37                                                   );
-    38                                               
-    39                                                   counter_txn txn;
-    40                                               
-    41              1                        203         always #5 clk = ~clk;
-    41              2                        202     
-    42                                               
-    43                                                   task wait_cycles(input int num_cycles);
-    44              1                        101             repeat (num_cycles) @(negedge clk);
-    44              2                        101     
-    45                                                   endtask
-    46                                               
-    47                                                   task assert_reset();
-    48              1                          1             rst_n = 0;
-    49                                                   endtask
-    50                                               
-    51                                                   task deassert_reset();
-    52              1                          1             rst_n = 1;
-    53                                                   endtask
-    54                                               
-    55                                               
-    56                                                   task golden_model();
-    57                                                       if (!rst_n) begin
-    58              1                         11                 golden_count_out = 0;
-    59                                                       end else if (!load_n) begin
-    60              1                         14                 golden_count_out = data_load;
-    61                                                       end else if (ce) begin
-    62                                                           if (up_down) begin
-    63              1                          5                     golden_count_out = golden_count_out + 1;
-    64                                                           end else begin
-    65              1                          6                     golden_count_out = golden_count_out - 1;
-    66                                                           end
-    67                                                       end
-    68              1                        101             golden_max_count = (golden_count_out == {WIDTH{1'b1}});
-    69              1                        101             golden_zero = (golden_count_out == 0);
-    70                                                   endtask
-    71                                               
-    72                                                   task check_result();
-    73              1                         92             local_error_count = 0;
-    74                                               
-    75                                                       if (count_out !== golden_count_out) begin
-    76              1                    ***0***                 $error("[ERROR] count_out mismatch. Expected: %0d, Got: %0d", golden_count_out, count_out);
-    77              1                    ***0***                 local_error_count++;
-    78                                                       end
-    79                                               
-    80                                                       if (max_count !== golden_max_count) begin
-    81              1                    ***0***                 $error("[ERROR] max_count mismatch. Expected: %b, Got: %b", golden_max_count, max_count);
-    82              1                    ***0***                 local_error_count++;
-    83                                                       end
-    84                                               
-    85                                                       if (zero !== golden_zero) begin
-    86              1                    ***0***                 $error("[ERROR] zero mismatch. Expected: %b, Got: %b", golden_zero, zero);
-    87              1                    ***0***                 local_error_count++;
-    88                                                       end
-    89                                               
-    90                                                       if (local_error_count == 0) begin
-    91              1                         92                 pass_count++;
-    92              1                         92                 $display("[PASS] Outputs match expected values.");
-    93                                                       end else begin
-    94              1                    ***0***                 error_count++;
-    95              1                    ***0***                 $display("[FAIL] Total mismatches in this check: %0d", local_error_count);
-    96                                                       end
-    97                                                   endtask
-    98                                               
-    99                                               
-    100                                                  initial begin
-    101             1                          1             $display("Starting counter testbench...");
-    102             1                          1             clk = 0;
-    103             1                          1             txn = new();
-    104                                              
-    105                                                      // COUNTER1
-    106             1                          1             $display("\nCOUNTER1\n");
-    107             1                          1             assert_reset();
-    108             1                          1             golden_model();
-    109             1                          1             wait_cycles(1);
-    110             1                          1             deassert_reset();
-    111             1                          1             check_result();
-    112                                              
-    113                                                      // COUNTER2
-    114             1                          1             $display("\nCOUNTER2\n");
-    115             1                         10             repeat (10) begin
-    116                                                          assert (txn.randomize(load_n, data_load));
-    117             1                         10                 drive_inputs();
-    118             1                         10                 golden_model();
-    119             1                         10                 wait_cycles(1);
-    120                                                          if (~load_n) begin
-    121             1                          8                     check_result();
-    122                                                          end
-    123                                                      end
-    124             1                          1             txn.reset();
-    125                                              
-    126                                                      // COUNTER3 & COUNTER4
-    127             1                          1             $display("\nCOUNTER3 & COUNTER4\n");
-    128             1                         10             repeat (10) begin
-    129                                                          assert (txn.randomize(ce, up_down));
-    130             1                         10                 drive_inputs();
-    131             1                         10                 golden_model();
-    132             1                         10                 wait_cycles(1);
-    133                                                          if (ce) begin
-    134             1                          8                     check_result();
-    135                                                          end
-    136                                                      end
-    137             1                          1             txn.reset();
-    138                                              
-    139                                                      // COUNTER5
-    140             1                          1             $display("\nCOUNTER5\n");
-    141             1                         10             repeat (10) begin
-    142                                                          assert (txn.randomize(up_down));
-    143             1                         10                 drive_inputs();  
-    144             1                         10                 golden_model();
-    145             1                         10                 wait_cycles(1);
-    146             1                         10                 check_result();
-    147                                                      end
-    148             1                          1             txn.reset();
-    149                                              
-    150                                                      // COUNTER6 & COUNTER7
-    151             1                          1             $display("\nCOUNTER6 & COUNTER7\n");
-    152             1                         50             repeat (50) begin
-    153                                                          assert (txn.randomize(ce, up_down));
-    154             1                         50                 drive_inputs();
-    155             1                         50                 golden_model();
-    156             1                         50                 wait_cycles(1);
-    157                                                          if (max_count) begin
-    158             1                    ***0***                     check_result();
-    159                                                          end
-    160                                                          if (zero) begin
-    161             1                         50                     check_result();
-    162                                                          end
-    163                                                      end
-    164             1                          1             txn.reset();
-    165                                              
-    166                                                      // COUNTER8 
-    167             1                          1             $display("\nCOUNTER8\n");    
-    168             1                         10             repeat (10) begin
-    169                                                          assert (txn.randomize());
-    170             1                         10                 drive_inputs();
-    171             1                         10                 golden_model();
-    172             1                         10                 wait_cycles(1);
-    173             1                         10                 check_result();
-    174                                                      end
-    175             1                          1             txn.reset();
-    176                                              
-    177                                                      // COUNTER9
-    178             1                          1             $display("\nCOUNTER9\n");
-    179             1                         10             repeat (10) begin
-    180                                                          assert (txn.randomize(load_n, ce));
-    181             1                         10                 drive_inputs();
-    182             1                         10                 golden_model();
-    183             1                         10                 wait_cycles(1);
-    184                                                          if (~load_n & ce) begin
-    185             1                          5                     check_result();
-    186                                                          end
-    187                                                      end
-    188                                              
-    189                                                      // Display completion message
-    190             1                          1             $display("Simulation Completed: %0d test cases executed.", pass_count + error_count);
-    191             1                          1             $display("Test Summary: Passed = %0d, Failed = %0d", pass_count, error_count);
-    192             1                          1             $stop;
-    193                                                  end
-    194                                                  
-    195                                                  task drive_inputs();
-    196             1                        100             rst_n     = txn.rst_n;
-    197             1                        100             load_n    = txn.load_n;
-    198             1                        100             ce        = txn.ce;
-    199             1                        100             up_down   = txn.up_down;
-    200             1                        100             data_load = txn.data_load;
+    22                                               //Registering input signals
+    23              1                       1056     always @(posedge clk or posedge rst) begin
+    24                                                 if(rst) begin
+    25              1                        109          cin_reg <= 0;
+    26              1                        109          red_op_B_reg <= 0;
+    27              1                        109          red_op_A_reg <= 0;
+    28              1                        109          bypass_B_reg <= 0;
+    29              1                        109          bypass_A_reg <= 0;
+    30              1                        109          direction_reg <= 0;
+    31              1                        109          serial_in_reg <= 0;
+    32              1                        109          opcode_reg <= 0;
+    33              1                        109          A_reg <= 0;
+    34              1                        109          B_reg <= 0;
+    35                                                 end else begin
+    36              1                        947          cin_reg <= cin;
+    37              1                        947          red_op_B_reg <= red_op_B;
+    38              1                        947          red_op_A_reg <= red_op_A;
+    39              1                        947          bypass_B_reg <= bypass_B;
+    40              1                        947          bypass_A_reg <= bypass_A;
+    41              1                        947          direction_reg <= direction;
+    42              1                        947          serial_in_reg <= serial_in;
+    43              1                        947          opcode_reg <= opcode;
+    44              1                        947          A_reg <= A;
+    45              1                        947          B_reg <= B;
+    46                                                 end
+    47                                               end
+    48                                               
+    49                                               //leds output blinking 
+    50              1                       1056     always @(posedge clk or posedge rst) begin
+    51                                                 if(rst) begin
+    52              1                        109          leds <= 0;
+    53                                                 end else begin
+    54                                                     if (invalid)
+    55              1                        495             leds <= ~leds;
+    56                                                     else
+    57              1                        452             leds <= 0;
+    58                                                 end
+    59                                               end
+    60                                               
+    61                                               //ALSU output processing
+    62              1                       1055     always @(posedge clk or posedge rst) begin
+    63                                                 if(rst) begin
+    64              1                        108         out <= 0;
+    65                                                 end
+    66                                                 else begin
+    67                                                   if (bypass_A_reg && bypass_B_reg)
+    68              1                          1           out <= (INPUT_PRIORITY == "A")? A_reg: B_reg;
+    69                                                   else if (bypass_A_reg)
+    70              1                         51           out <= A_reg;
+    71                                                   else if (bypass_B_reg)
+    72              1                         49           out <= B_reg;
+    73                                                   else if (invalid) 
+    74              1                        441             out <= 0;
+    75                                                   else begin
+    76                                                       case (opcode)
+    77                                                         3'h0: begin 
+    78                                                           if (red_op_A_reg && red_op_B_reg)
+    79              1                          9                   out <= (INPUT_PRIORITY == "A")? |A_reg: |B_reg;
+    80                                                           else if (red_op_A_reg) 
+    81              1                         10                   out <= |A_reg;
+    82                                                           else if (red_op_B_reg)
+    83              1                          6                   out <= |B_reg;
+    84                                                           else 
+    85              1                         34                   out <= A_reg | B_reg;
+    86                                                         end
+    87                                                         3'h1: begin
+    88                                                           if (red_op_A_reg && red_op_B_reg)
+    89              1                          9                   out <= (INPUT_PRIORITY == "A")? ^A_reg: ^B_reg;
+    90                                                           else if (red_op_A_reg) 
+    91              1                         16                   out <= ^A_reg;
+    92                                                           else if (red_op_B_reg)
+    93              1                         10                   out <= ^B_reg;
+    94                                                           else 
+    95              1                         35                   out <= A_reg ^ B_reg;
+    96                                                         end
+    97              1                         52               3'h2: out <= A_reg + B_reg;
+    98              1                         74               3'h3: out <= A_reg * B_reg;
+    99                                                         3'h4: begin
+    100                                                          if (direction_reg)
+    101             1                         21                   out <= {out[4:0], serial_in_reg};
+    102                                                          else
+    103             1                         31                   out <= {serial_in_reg, out[5:1]};
+    104                                                        end
+    105                                                        3'h5: begin
+    106                                                          if (direction_reg)
+    107             1                         34                   out <= {out[4:0], out[5]};
+    108                                                          else
+    109             1                         29                   out <= {out[0], out[5:1]};
 
 Toggle Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
     ----------------              ----      ----    ------  --------
-    Toggles                        234        54       180    23.07%
+    Toggles                        120       118         2    98.33%
 
 ================================Toggle Details================================
 
-Toggle Coverage for instance /counter_tb --
+Toggle Coverage for instance /alsu_tb/DUT --
 
-                                              Node      1H->0L      0L->1H  "Coverage"
-                                              ---------------------------------------
-                                                ce           1           1      100.00 
-                                               clk           1           1      100.00 
-                                    count_out[0-3]           1           1      100.00 
-                                    data_load[0-3]           1           1      100.00 
-                                 error_count[0-31]           0           0        0.00 
-                             golden_count_out[0-3]           1           1      100.00 
-                                  golden_max_count           1           1      100.00 
-                                       golden_zero           1           1      100.00 
-                                            load_n           1           1      100.00 
-                           local_error_count[0-31]           0           0        0.00 
-                                         max_count           1           1      100.00 
-                                   pass_count[0-5]           1           1      100.00 
-                                     pass_count[6]           0           1       50.00 
-                                  pass_count[7-31]           0           0        0.00 
-                                             rst_n           0           1       50.00 
-                                           up_down           1           1      100.00 
-                                              zero           1           1      100.00 
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                            A[0-2]           1           1                              100.00 
+                                        A_reg[2-0]           1           1                              100.00 
+                                            B[0-2]           1           1                              100.00 
+                                        B_reg[2-0]           1           1                              100.00 
+                                          bypass_A           1           1                              100.00 
+                                      bypass_A_reg           1           1                              100.00 
+                                          bypass_B           1           1                              100.00 
+                                      bypass_B_reg           1           1                              100.00 
+                                               cin           1           1                              100.00 
+                                        cin_reg[1]           0           0                                0.00 
+                                        cin_reg[0]           1           1                              100.00 
+                                               clk           1           1                              100.00 
+                                         direction           1           1                              100.00 
+                                     direction_reg           1           1                              100.00 
+                                           invalid           1           1                              100.00 
+                                    invalid_opcode           1           1                              100.00 
+                                    invalid_red_op           1           1                              100.00 
+                                        leds[15-0]           1           1                              100.00 
+                                       opcode[0-2]           1           1                              100.00 
+                                   opcode_reg[2-0]           1           1                              100.00 
+                                          out[5-0]           1           1                              100.00 
+                                          red_op_A           1           1                              100.00 
+                                      red_op_A_reg           1           1                              100.00 
+                                          red_op_B           1           1                              100.00 
+                                      red_op_B_reg           1           1                              100.00 
+                                               rst           1           1                              100.00 
+                                         serial_in           1           1                              100.00 
+                                     serial_in_reg           1           1                              100.00 
 
-Total Node Count     =        117 
-Toggled Node Count   =         26 
-Untoggled Node Count =         91 
+Total Node Count     =         60 
+Toggled Node Count   =         59 
+Untoggled Node Count =          1 
 
-Toggle Coverage      =      23.07% (54 of 234 bins)
+Toggle Coverage      =      98.33% (118 of 120 bins)
+
+=================================================================================
+=== Instance: /alsu_tb
+=== Design Unit: work.alsu_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/alsu_tb/#ublk#138065602#88/immed__90
+                     ALSU_tb.sv(90)                     0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         5         1    83.33%
+
+================================Branch Details================================
+
+Branch Coverage for instance /alsu_tb
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALSU_tb.sv
+------------------------------------IF Branch------------------------------------
+    125                                     1001     Count coming in to IF
+    125             1                        225             if (out !== golden_out) begin
+                                             776     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    130                                     1001     Count coming in to IF
+    130             1                    ***0***             if (leds !== golden_leds) begin
+                                            1001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    135                                     1001     Count coming in to IF
+    135             1                        776             if (local_error_count == 0) begin
+    138             1                        225             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       3         2         1    66.66%
+
+================================Condition Details================================
+
+Condition Coverage for instance /alsu_tb --
+
+  File ALSU_tb.sv
+----------------Focused Condition View-------------------
+Line       125 Item    1  (out !== golden_out)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (out !== golden_out)         Y
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (out !== golden_out)_0  -                             
+  Row   2:          1  (out !== golden_out)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       130 Item    1  (leds !== golden_leds)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (leds !== golden_leds)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:          1  (leds !== golden_leds)_0  -                             
+  Row   2:    ***0***  (leds !== golden_leds)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       135 Item    1  (local_error_count == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (local_error_count == 0)         Y
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:          1  (local_error_count == 0)_0  -                             
+  Row   2:          1  (local_error_count == 0)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      40        38         2    95.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /alsu_tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALSU_tb.sv
+    5                                                module alsu_tb;
+    6                                                    // TESTBENCH VARIABLES
+    7                                                    int NUM_TEST_CASES = 1000;
+    8                                                    int local_error_count = 0;
+    9                                                    int error_count = 0;
+    10                                                   int pass_count = 0;
+    11                                                   
+    12                                                   // DUT 
+    13                                                   parameter INPUT_PRIORITY = "A";
+    14                                                   parameter FULL_ADDER = "ON";
+    15                                                   bit clk;
+    16                                                   bit rst;
+    17                                                   bit cin;
+    18                                                   bit red_op_A;
+    19                                                   bit red_op_B;
+    20                                                   bit bypass_A;
+    21                                                   bit bypass_B;
+    22                                                   bit direction;
+    23                                                   bit serial_in;
+    24                                                   opcode_e opcode;
+    25                                                   bit signed [2:0] A;
+    26                                                   bit signed [2:0] B;
+    27                                                   logic [15:0] leds;
+    28                                                   logic signed [5:0] out;
+    29                                               
+    30                                                   // GOLDEN MODEL
+    31                                                   logic signed [5:0] golden_out;
+    32                                                   logic [15:0] golden_leds;
+    33                                                   
+    34                                                   ALSU #(
+    35                                                       .INPUT_PRIORITY(INPUT_PRIORITY), 
+    36                                                       .FULL_ADDER(FULL_ADDER)
+    37                                                   ) DUT (
+    38                                                       .clk(clk),
+    39                                                       .rst(rst),
+    40                                                       .cin(cin),
+    41                                                       .red_op_A(red_op_A),
+    42                                                       .red_op_B(red_op_B),
+    43                                                       .bypass_A(bypass_A),
+    44                                                       .bypass_B(bypass_B),    
+    45                                                       .direction(direction),
+    46                                                       .serial_in(serial_in),
+    47                                                       .opcode(opcode),
+    48                                                       .A(A),
+    49                                                       .B(B),
+    50                                                       .leds(leds),
+    51                                                       .out(out)
+    52                                                   );
+    53                                               
+    54                                                   ALSU_golden #(
+    55                                                       .INPUT_PRIORITY(INPUT_PRIORITY), 
+    56                                                       .FULL_ADDER(FULL_ADDER)
+    57                                                   ) GOLDEN (
+    58                                                       .clk(clk),
+    59                                                       .rst(rst),
+    60                                                       .cin(cin),
+    61                                                       .red_op_A(red_op_A),
+    62                                                       .red_op_B(red_op_B),
+    63                                                       .bypass_A(bypass_A),
+    64                                                       .bypass_B(bypass_B),    
+    65                                                       .direction(direction),
+    66                                                       .serial_in(serial_in),
+    67                                                       .opcode(opcode),
+    68                                                       .A(A),
+    69                                                       .B(B),
+    70                                                       .leds(golden_leds),
+    71                                                       .out(golden_out)
+    72                                                   );
+    73                                               
+    74                                                   alsu_inputs alsu_obj;
+    75                                                   
+    76                                                   initial begin
+    77              1                          1             clk = 0;
+    78              1                          1             forever #5 clk = ~clk;
+    78              2                       2005     
+    78              3                       2004     
+    79                                                   end
+    80                                               
+    81                                                   initial begin
+    82              1                          1             $display("Starting ALSU testbench...");
+    83              1                          1             alsu_obj = new();
+    84                                               
+    85              1                          1             assert_reset();
+    86              1                          1             check_result();
+    87                                               
+    88              1                       1000             repeat(NUM_TEST_CASES) begin
+    89              1                       1000                 wait_cycles(1);
+    90                                                           assert(alsu_obj.randomize());
+    91              1                       1000                 rst = alsu_obj.rst;
+    92              1                       1000                 cin = alsu_obj.cin;
+    93              1                       1000                 red_op_A = alsu_obj.red_op_A;
+    94              1                       1000                 red_op_B = alsu_obj.red_op_B;
+    95              1                       1000                 bypass_A = alsu_obj.bypass_A;
+    96              1                       1000                 bypass_B = alsu_obj.bypass_B;
+    97              1                       1000                 direction = alsu_obj.direction;
+    98              1                       1000                 serial_in = alsu_obj.serial_in;
+    99              1                       1000                 opcode = alsu_obj.opcode;
+    100             1                       1000                 A = alsu_obj.A;
+    101             1                       1000                 B = alsu_obj.B;
+    102             1                       1000                 check_result();
+    103                                                      end
+    104                                              	
+    105                                              	// Display completion message
+    106             1                          1             $display("Simulation Completed: %0d test cases executed.", NUM_TEST_CASES);
+    107             1                          1             $display("Test Summary: Passed = %0d, Failed = %0d", pass_count, error_count);
+    108             1                          1     	$stop;
+    109                                                  end
+    110                                              
+    111                                                  task wait_cycles(input int num_cycles);
+    112             1                       1002             repeat (num_cycles) @(negedge clk);
+    112             2                       1002     
+    113                                                  endtask
+    114                                              
+    115                                                  task assert_reset();
+    116             1                          1             wait_cycles(1);
+    117             1                          1             rst = 1;
+    118             1                          1             wait_cycles(1);
+    119             1                          1             rst = 0;
+    120                                                  endtask
+    121                                                  
+    122                                                  task check_result();
+    123             1                       1001             local_error_count = 0;
+    124                                              
+    125                                                      if (out !== golden_out) begin
+    126             1                        225                 $error("[ERROR] out mismatch. Expected: %0d, Got: %0d", golden_out, out);
+    127             1                        225                 local_error_count++;
+    128                                                      end
+    129                                              
+    130                                                      if (leds !== golden_leds) begin
+    131             1                    ***0***                 $error("[ERROR] leds mismatch. Expected: %b, Got: %b", golden_leds, leds);
+    132             1                    ***0***                 local_error_count++;
+    133                                                      end
+    134                                              
+    135                                                      if (local_error_count == 0) begin
+    136             1                        776                 pass_count++;
+    137             1                        776                 $display("[PASS] Outputs match expected values.");
+    138                                                      end else begin
+    139             1                        225                 error_count++;
+    140             1                        225                 $display("[FAIL] Total mismatches in this check: %0d", local_error_count);
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        318       162       156    50.94%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /alsu_tb --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                            A[0-2]           1           1                              100.00 
+                                            B[0-2]           1           1                              100.00 
+                                          bypass_A           1           1                              100.00 
+                                          bypass_B           1           1                              100.00 
+                                               cin           1           1                              100.00 
+                                               clk           1           1                              100.00 
+                                         direction           1           1                              100.00 
+                                  error_count[0-6]           1           1                              100.00 
+                                    error_count[7]           0           1                               50.00 
+                                 error_count[8-31]           0           0                                0.00 
+                                 golden_leds[0-15]           1           1                              100.00 
+                                   golden_out[0-5]           1           1                              100.00 
+                                        leds[0-15]           1           1                              100.00 
+                              local_error_count[0]           1           1                              100.00 
+                           local_error_count[1-31]           0           0                                0.00 
+                                            opcode               ENUM type       Value       Count 
+                                                                        OR           1      100.00 
+                                                                       XOR           3      100.00 
+                                                                       ADD           2      100.00 
+                                                                       MUL           3      100.00 
+                                                                     SHIFT           3      100.00 
+                                                                    ROTATE           3      100.00 
+                                                                 INVALID_6           2      100.00 
+                                                                 INVALID_7           1      100.00 
+                                          out[0-5]           1           1                              100.00 
+                                   pass_count[0-8]           1           1                              100.00 
+                                     pass_count[9]           0           1                               50.00 
+                                 pass_count[10-31]           0           0                                0.00 
+                                          red_op_A           1           1                              100.00 
+                                          red_op_B           1           1                              100.00 
+                                               rst           1           1                              100.00 
+                                         serial_in           1           1                              100.00 
+
+Total Node Count     =        163 
+Toggled Node Count   =         84 
+Untoggled Node Count =         79 
+
+Toggle Coverage      =      50.94% (162 of 318 bins)
 
 
 ASSERTION RESULTS:
@@ -622,18 +683,8 @@ ASSERTION RESULTS:
 Name                 File(Line)                   Failure      Pass 
                                                   Count        Count
 --------------------------------------------------------------------
-/counter_tb/#ublk#95084642#115/immed__116
-                     counter_tb.sv(116)                 0          1
-/counter_tb/#ublk#95084642#128/immed__129
-                     counter_tb.sv(129)                 0          1
-/counter_tb/#ublk#95084642#141/immed__142
-                     counter_tb.sv(142)                 0          1
-/counter_tb/#ublk#95084642#152/immed__153
-                     counter_tb.sv(153)                 0          1
-/counter_tb/#ublk#95084642#168/immed__169
-                     counter_tb.sv(169)                 0          1
-/counter_tb/#ublk#95084642#179/immed__180
-                     counter_tb.sv(180)                 0          1
+/alsu_tb/#ublk#138065602#88/immed__90
+                     ALSU_tb.sv(90)                     0          1
 
-Total Coverage By Instance (filtered view): 75.61%
+Total Coverage By Instance (filtered view): 91.31%
 
